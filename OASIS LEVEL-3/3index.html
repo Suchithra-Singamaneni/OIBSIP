@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>temperature</title> 
+        <style>
+            *{
+                margin: 1px;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                padding:0%;
+                box-sizing:content-box;
+                font-size: 20px;
+            }
+            .whole
+             { 
+                margin: 100px 400px;
+                background-color:rgb(140,178,184); 
+                padding:50px 15px;
+                border-radius: 10px;
+                height: 240px;
+                width: 500px;
+                border-bottom:1px solid;
+             } 
+             .abc
+             {
+                 margin:0px 0px;
+                 width:65% ;
+                 padding:4px 0px ;
+                 text-align:center;
+                 display:inline;
+                 font-size: 2px;
+                 justify-content: space-between;
+             }
+             .ab 
+             { 
+               width:80%;
+               padding:0px 50px;
+               text-align:left;
+               margin: 0px 5px;
+             }
+            .bc
+            #opt{
+                background-color:rgb(207,203,203);
+                outline:none;
+                text-align:center;
+                width: 100%; 
+                font-size:15px;
+                color:rgb(58,95,120);
+                border:none;
+            }
+            .opt{
+                font-size:large;
+                margin-top:100px;
+                font-size:80px;
+
+            }
+            .value{
+                width:180%;
+                color:rgb(2, 2, 2);
+                font-size: 25px;
+                padding: 10px 0px;
+                outline-style: solid;
+                text-align:center;
+            }
+            .but{
+                    padding:10px 0px;
+                }
+                .but .con{
+                    background-color:rgb(85,152,194);
+                    border: none;
+                    font-size:20px;
+                    border-radius: 2px;
+                    border: groove;
+                    width:20%;
+                    align-items:left;
+                }
+                .but .re{
+                    background-color: rgb(40, 144, 209);
+                    border: groove;
+                    font-size: 20px;
+                    border-radius: 2px;
+                    width: 20%;
+                }
+                .ghi 
+                 {
+                 margin:10px 55px;
+                 margin-top:0%;
+                 text-align: left;
+                 padding:0px 0px;
+                 width: 45%;
+                 }
+ </style>
+</head> 
+    <body style="text-align:center;">
+    <div class="whole">
+        <h1>Temperature Converter</h1> 
+        <div class="abc">
+            <div class="ab">
+               <p>Degrees</p>
+              <div><input type ="number" class="bc" id="degree"></div>
+              </div>
+              <div class="ab">
+              <p>Type</p>
+               <select id="option">
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="celsius">Celsius</option>
+                </select>
+                </div>
+                </div>
+                <div class="but">
+                 <button onclick="converter()" class="con">convert</button>
+                 <button onclick="clea()" class="re">reset</button>
+                </div>
+            
+        
+        <div class="ghi">
+            <p>Result</p>
+            <div class="value"></div>
+        </div>
+       </div>
+        <script>
+            function converter()
+            {
+                var op=document.querySelector("#option");
+                var re=document.querySelector(".value");
+                var ip=document.querySelector(".bc").value;
+                if(op.value=="fahrenheit")
+                {
+                    var c=(ip-32)*(5/9)
+                    re.innerHTML=c+"°C"
+                }
+                if(op.value=="celsius")
+                {
+                    var f=ip*9/5+32
+                    re.innerHTML=f+"°F"
+                
+                }
+            }
+                function clea()
+                {
+                    var re=document.querySelector(".value");
+                    document.getElementById('degree').value=" ";
+                    re.innerHTML=" ";
+
+                }
+                </script>
+            </body>
+        </html>
+
+            
+
+       
+
+
